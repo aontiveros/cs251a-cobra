@@ -13,7 +13,7 @@ Next, the team will create and implement a domain model. The team will also crea
 
 ### Dates
 
-Project due on November 17, 2016
+Project due on November 17, 2016 -for use cases
 
 Presentation on November 29, 2016
 
