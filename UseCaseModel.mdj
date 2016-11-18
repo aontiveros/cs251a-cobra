@@ -4138,6 +4138,29 @@
 							"headQualifiersCompartment": {
 								"$ref": "AAAAAAFYb8b0IuskwMY="
 							}
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFYdZBdb10DV4s=",
+							"_parent": {
+								"$ref": "AAAAAAFYRgkcJYcq/1M="
+							},
+							"visible": true,
+							"enabled": true,
+							"lineColor": "#000000",
+							"fillColor": "#ff82c0",
+							"fontColor": "#000000",
+							"font": "Arial;13;0",
+							"showShadow": true,
+							"containerChangeable": false,
+							"containerExtending": false,
+							"left": 64,
+							"top": 16,
+							"width": 137,
+							"height": 85,
+							"autoResize": false,
+							"text": "Contributions:\n-Antonio --> 25%\n-Neethu --> 25%\n-Abhinaya --> 25%\n-Sam O --> 25%",
+							"wordWrap": true
 						}
 					]
 				},
