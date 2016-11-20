@@ -1,31 +1,31 @@
-package hrms.personnel;
+package hrms.personal;
 
 import java.util.*;
 
 /**
  * @author Cobra
  */
-public class Action {
+public class PhoneNumber {
 
     /**
      * Default constructor
      */
-    public Action() {
+    public PhoneNumber() {
     }
 
     /**
      * 
      */
-    private String note;
+    private String areaCode;
 
     /**
      * 
      */
-    private Date date;
+    private String countryCode;
 
     /**
      * 
      */
-    private ActionType type;
+    private String extension;
 
 }

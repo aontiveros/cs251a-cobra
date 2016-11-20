@@ -1,6 +1,7 @@
-package personnel;
+package hrms.personnel;
 
 import java.util.*;
+import hrms.personal.*;
 
 /**
  * @author Cobra

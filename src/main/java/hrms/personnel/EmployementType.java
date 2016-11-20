@@ -1,4 +1,4 @@
-package personnel;
+package hrms.personnel;
 
 /**
  * 

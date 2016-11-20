@@ -20,8 +20,50 @@ Presentation on November 29, 2016
 
 ### Members
 
-* Ontiveros
-* Sundarprasad
-* Koduri
-* Ordonia
+* Antonio Ontiveros
+* Neethu Sundarprasad
+* Abhi Koduri
+* Sam Ordonia
 
+### To open the project into an ide
+
+To open the project into an IDE (Ecplise or Intellij), run the following command for your respective IDE
+
+######  Eclipse
+
+For Windows:
+
+1. Open a terminal at the root of the repository
+2. run the following command:
+```gradlew eclipse```
+3. Import the project using eclipse
+
+For Linux/MacOS
+
+1. Open a terminal at the root of the repository
+2. Run the following command:
+```./gradlew eclipse```
+3. Import the project using eclipse
+
+
+
+###### Intellij
+
+
+For Windows:
+
+1. Open a terminal at the root of the repository
+2. run the following command:
+```gradlew idea```
+3. double click on the generated ipr file at the root of the repository.
+4. once intellij had loaded, import the project as a gradle project and press ok at every window
+5. exapand project to view source
+
+For Linux/MacOS
+
+1. Open a terminal at the root of the repository
+2. run the following command:
+```./gradlew idea```
+3. double click on the generated ipr file that at the root of the repository.
+4. once intellij had loaded, import the project as a gradle project and press ok at every window
+5. exapand project to view source
