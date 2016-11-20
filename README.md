@@ -67,3 +67,16 @@ For Linux/MacOS
 3. double click on the generated ipr file that at the root of the repository.
 4. once intellij had loaded, import the project as a gradle project and press ok at every window
 5. exapand project to view source
+
+# Running the application from the command line
+
+To simply run the application from the command line, type the following command into your
+terminal at the root of the repository:
+
+For Windows:
+```gradlew run```
+
+
+For Linux/MacOS:
+```./gradlew run```
+

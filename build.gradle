@@ -2,3 +2,17 @@ apply plugin: 'application'
 apply plugin: 'idea'
 apply plugin: 'eclipse'
 
+
+repositories{
+    mavenCentral()
+}
+
+dependencies{
+    //main source set dependencies
+    compile 'log4j:log4j:1.2.17'
+
+    //test source set dependencies
+    testCompile 'junit:junit:4.12'
+}
+
+mainClassName='hrms.system.HRMS'
