@@ -7,32 +7,59 @@ import java.util.*;
 /**
  * @author Cobra
  */
-public abstract class OrgUnit {
+public class OrgUnit {
 
-    /**
-     * Default constructor
-     */
-    public OrgUnit() {
+    public OrgUnit(int deptNumber, Set<Position> positions, Account fund, OrgUnitHead unitHead) {
+        mDeptNumber = deptNumber;
+        mPositions = positions;
+        mFund = fund;
+        mUnitHead = unitHead;
     }
 
-    /**
-     * 
-     */
-    protected int mDeptNumber;
-
-    /**
-     * 
-     */
+    private int mDeptNumber;
     private Set<Position> mPositions;
-
-    /**
-     * 
-     */
     private Account mFund;
-
-    /**
-     * 
-     */
     private OrgUnitHead mUnitHead;
 
+    public int getDeptNumber() {
+        return mDeptNumber;
+    }
+
+    public Set<Position> getPositions() {
+        return mPositions;
+    }
+
+    public Account getFund() {
+        return mFund;
+    }
+
+    public OrgUnitHead getUnitHead() {
+        return mUnitHead;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        OrgUnit orgUnit = (OrgUnit) o;
+
+        return mDeptNumber == orgUnit.mDeptNumber;
+
+    }
+
+    @Override
+    public int hashCode() {
+        return mDeptNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "OrgUnit{" +
+                "mDeptNumber=" + mDeptNumber +
+                ", mPositions=" + mPositions +
+                ", mFund=" + mFund +
+                ", mUnitHead=" + mUnitHead +
+                '}';
+    }
 }
