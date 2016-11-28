@@ -7,10 +7,14 @@ import java.util.*;
  */
 public class Account {
 
-    /**
-     * Default constructor
-     */
-    public Account() {
+    public Account(double balance) {
+        mBalance = balance;
+    }
+
+    private double mBalance;
+
+    public double getBalance() {
+        return mBalance;
     }
 
 }

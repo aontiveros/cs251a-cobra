@@ -7,15 +7,10 @@ import java.util.*;
  */
 public class Benefit {
 
-    /**
-     * Default constructor
-     */
-    public Benefit() {
+    public Benefit(BenefitType type) {
+        mType = type;
     }
 
-    /**
-     * 
-     */
     private BenefitType mType;
 
 }
