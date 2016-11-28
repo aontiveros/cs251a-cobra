@@ -1,4 +1,4 @@
-package hrms.personnel;
+package EmployeeManagementPackage;
 
 /**
  * 

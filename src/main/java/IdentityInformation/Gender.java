@@ -1,9 +1,10 @@
-package hrms.personal;
+package IdentityInformation;
+
 /**
  * 
  */
 public enum Gender {
     MALE,
     FEMALE,
-    OTHER
+    DECLINETOSTATE
 }
