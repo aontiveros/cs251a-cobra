@@ -1,0 +1,44 @@
+Project Guidelines
+The Presentation (20 points)
+
+The presentation should not last longer than 35 minutes.
+
+Please upload your domain model before the presentation so that I will have a copy. You will be given 24 hours after the presentation to upload a final version of the domain model together with your implementation model (see below).
+
+The presentation is basically a walk-through of the domain model and, if there's enough time and if it's interesting enough, the implementation model.
+
+The presentation can be an informal panel discussion among team members, or a more formal one-person-at-a-time doing Power Points. I mostly want to see and hear about your class diagrams and be able to ask lots of questions.
+
+I'll ask questions to specific team members to gauge their knowledge of the model and their contributions to the project.
+
+I tend to get suspicious of team members who sit quietly through the entire presentation. While not required, the team may want to divide the presentation so that each team member gets a chance to speak.
+
+There will be point deductions for poorly organized or technically flawed presentations
+
+The Domain Model (40 points)
+
+The three main questions I ask when looking at a domain model are:
+
+1. Is it faithful to the domain? Did the modelers research the domain? Was domain terminology used? Was the model complete enough to reflect all aspects of the domain needed to understand the use cases?
+
+2. Is the model implementable? In other words, did the model provide enough detail to implement the use cases? For example, were all needed navigations present? Almost as bad is providing information that isn't needed. For example, making programmers implement bi-directional associations that only need to be one-way.
+
+3. Was the model well organized and well designed? Were analysis patterns used? Was the UML correct?
+
+The Implementation Model (20 points)
+
+The implementation model is a collection of Java packages containing Java class and interface declarations (and possibly a suite of test cases). (This could be turned in as a zip file containing all of the source files from an Eclipse project, for example.)
+
+The implementation model should not disagree with the domain model except in level of detail.
+
+All of the code should compile. A few test cases are appreciated (although not required).
+
+Class declarations should implement all administrative methods such as getters, setters, delegators, constructors, equals, compareTo, toString, etc.
+
+Factory methods and other life cycle management methods should also be provided. (You can skip dbase code or file I/O for now.)
+
+Methods that don't involve complicated algorithms can also be implemented.
+
+For testing purposes, mock objects can be used to simulate actors. Methods can also have mock implementations.
+
+ 
