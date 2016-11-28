@@ -9,15 +9,36 @@ import java.util.*;
  */
 public class Supervisor extends Position {
 
-    /**
-     * Default constructor
-     */
-    public Supervisor() {
+    public Supervisor(Set<Position> directReports) {
+        mDirectReports = directReports;
     }
 
-    /**
-     * 
-     */
-    private Set<Position> positions;
+    private Set<Position> mDirectReports;
 
+    public Set<Position> getDirectReports() {
+        return mDirectReports;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Supervisor that = (Supervisor) o;
+
+        return mDirectReports.equals(that.mDirectReports);
+
+    }
+
+    @Override
+    public int hashCode() {
+        return mDirectReports.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "Supervisor{" +
+                "mDirectReports=" + mDirectReports +
+                '}';
+    }
 }
