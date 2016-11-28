@@ -1,0 +1,34 @@
+Human Resource Management System (HRMS)
+The HRMS allows employees and guests (members of the public) to view certain HR data. Full access to data and authority to edit the data is only granted to employees who are HR Specialists.
+
+Organizational Structure
+
+Much has been written about optimizing the structure of an organization. Hierarchies? Networks? Pipelines? Hives? Packs? Splinter cells? Large organizations—governments, corporations, universities, the target customers for our HRMS—often use a hierarchical structure.
+
+Problem: For example, SJSU organizational units include departments, colleges, and divisions. Do some research and sketch the organization chart.
+
+Problem: Create a reference section that includes 4 – 5 web pages you have read that have helped you understand organizational structures.
+
+Problem: Include references to HR management systems that have helped you.
+
+Of course new CEOs love to reorganize. (Maybe that's why the last CEO got fired?) The HRMS must provide some way for an HR specialists to view and update the organization's org chart. (Of course anyone is welcome to view an organization or the org chart.) This may include dissolving existing units, creating new ones, or changing the parent/subsidiaries of an existing unit.
+
+Departments have chairs, colleges have deans, and divisions have VPs. Whatever the terminology, the HRMS must allow the user to set and change the head of a unit.
+
+Of course units need operating funds. This will mean linking it to an account in the Account Management System.
+
+The biggest HR issue when it comes to organizational structure is assigning (and un-assigning) positions to units. For example, an academic department will usually have a chair, an administrator, a technician, and some fixed number of permanent faculty positions. (Getting additional faculty positions allocated to one's department is a big deal.)
+
+A position has a title, an SOC code, a specification (tasks, responsibilities, etc.), benefits (e.g. health insurance, vacation time, retirement fund, etc.), a pay scale (e.g., starting pay, schedule of pay increases, hourly?/salaried?, etc.), and a supervisory position (e.g., "administrators are supervised by chairs").
+
+Personnel
+
+When someone is hired, an employee record is created by the HRMS. This includes the hire date, the SSN, status (full time, part time, retired, on leave, terminated ...), and personal data—name, DOB, gender, and stuff we need to know for EEO and ADA reporting. We'll also need personal data on the employee's dependents. (We want to keep personal data for customers and suppliers, too.)
+
+Still more: The employee record tells us the employee's position, shift (days and hours), and supervisor. (We want the HRMS to cry foul if the position of the supervisor is not appropriate.)
+
+The HRMS should keep a record of all HR actions for an employee. This includes hiring, firing, granting leave, promoting, demoting, transferring, reprimanding, paying, etc.
+
+It should be easy to add and view performance evaluations for each employee. The performance evaluation is written by the supervisor and grades each of the employee's duties over some period of time. (Usually a year.)
+
+Finally, we should be able to assign a payroll account to an employee. (Of course this account lives in the accounting system.) The employee record should tell us which step the employee currently is on in his or her salary scale. The HR Specialist should be able to use the HMRS to pay employees.
