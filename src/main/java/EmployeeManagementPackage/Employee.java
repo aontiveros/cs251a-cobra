@@ -2,6 +2,7 @@ package EmployeeManagementPackage;
 
 import IdentityInformation.Guest;
 import IdentityInformation.Person;
+import OrgStructurePackage.OrgStruct.*;
 
 import java.util.*;
 

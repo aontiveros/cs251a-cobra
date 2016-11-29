@@ -1,5 +1,7 @@
+package IdentityInformation;
 
 import java.util.*;
+import EmployeeManagementPackage.*;
 
 /**
  * @author Cobra
@@ -15,7 +17,7 @@ public class Guest {
     /**
      * @return
      */
-    public ArrayList<JobOpening> viewJobListings() {
+    public ArrayList<Position> viewJobListings() {
         // TODO implement here
         return null;
     }

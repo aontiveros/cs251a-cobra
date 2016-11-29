@@ -1,3 +1,4 @@
+package IdentityInformation;
 
 import java.util.*;
 
@@ -20,7 +21,7 @@ public class Email {
     /**
      * 
      */
-    private String symbol = @;
+    private String symbol = "@";
 
     /**
      * 
