@@ -1,5 +1,6 @@
 package hrms.system;
 
+import EmployeeManagementPackage.Manager;
 import EmployeeManagementPackage.Position;
 import IdentityInformation.HRAdmin;
 import IdentityInformation.Person;
@@ -25,10 +26,11 @@ public class HRMS {
         Set<Person> dependentsOFBob = new HashSet<>();
         dependentsOFBob.add(new Person("Clara"));
         Position HRPos = new Position("HR Specialist");
-        Supervisor bossOfBob = new Supervisor(new HashSet<>());
-//        HRAdmin HRSpecialist = new HRAdmin("12345", new Date(1220227200L*1000),
-//                Bob, dependentsOFBob, HRPos, mActions, mEvaluations, mStatus, mSupervisor);
+        Manager bossOfBob = new Manager("87234");
+        HRAdmin HRSpecialist = new HRAdmin("12345", new Date(1220227200L*1000),
+                Bob, dependentsOFBob, HRPos, bossOfBob);
 
+        System.out.println(HRSpecialist);
 //        logger.info("Hello there");
 //        logger.info("The application is working!");
     }

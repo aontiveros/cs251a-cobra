@@ -23,17 +23,26 @@ public class Employee extends Guest {
         this.mSupervisor = mSupervisor;
     }
 
-    public Employee(String SSN, Date hireDate, Person actor, Set<Person> dependents, Position position, Status status, Manager supervisor) {
+    public Employee(String SSN) {
+        mSSN = SSN;
+    }
+
+    public Employee(String SSN, Date hireDate, Person actor, Set<Person> dependents, Position position, Manager supervisor) {
         mSSN = SSN;
         mHireDate = hireDate;
         mActor = actor;
         mDependents = dependents;
         mPosition = position;
-        mStatus = status;
         mSupervisor = supervisor;
     }
 
-
+    public Employee(String SSN, Date hireDate, Person actor, Set<Person> dependents, Position position) {
+        mSSN = SSN;
+        mHireDate = hireDate;
+        mActor = actor;
+        mDependents = dependents;
+        mPosition = position;
+    }
 
     /**
      * 

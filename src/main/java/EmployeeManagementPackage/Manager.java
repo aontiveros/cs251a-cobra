@@ -14,6 +14,10 @@ public class Manager extends Employee {
         this.mManaging = mManaging;
     }
 
+    public Manager(String SSN) {
+        super(SSN);
+    }
+
     public Set<Employee> getmManaging() {
 
         return mManaging;

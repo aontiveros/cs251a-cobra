@@ -15,6 +15,10 @@ public class HRAdmin extends Employee {
         super(SSN, hireDate, mActor, mDependents, mPosition, mActions, mEvaluations, mStatus, mSupervisor);
     }
 
+    public HRAdmin(String SSN, Date hireDate, Person mActor, Set<Person> mDependents, Position mPosition, Manager mSupervisor) {
+        super(SSN, hireDate, mActor, mDependents, mPosition, mSupervisor);
+    }
+
     @Override
     public String toString(){
         return super.toString();
