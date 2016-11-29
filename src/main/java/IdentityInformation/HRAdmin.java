@@ -28,6 +28,7 @@ public class HRAdmin extends Employee {
      */
     public void createActionOnRecord() {
         // TODO implement here
+
     }
 
     /**
@@ -101,8 +102,6 @@ public class HRAdmin extends Employee {
         // TODO implement here
         OrgUnitHead newHead = new OrgUnitHead(UnitHeadType.CHAIR);
         mOrgUnit1.setUnitHead(newHead);
-
-        OrgChart.getOrgChart().addUnit(mOrgUnit1);
     }
 
     /**
