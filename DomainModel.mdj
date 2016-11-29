@@ -20814,29 +20814,6 @@
 									}
 								},
 								{
-									"_type": "UMLNoteView",
-									"_id": "AAAAAAFYja2ubXNsfhU=",
-									"_parent": {
-										"$ref": "AAAAAAFYfqIkz+C8h9g="
-									},
-									"visible": true,
-									"enabled": true,
-									"lineColor": "#000000",
-									"fillColor": "#fefa8a",
-									"fontColor": "#000000",
-									"font": "Arial;13;0",
-									"showShadow": true,
-									"containerChangeable": false,
-									"containerExtending": false,
-									"left": 752,
-									"top": 544,
-									"width": 169,
-									"height": 33,
-									"autoResize": false,
-									"text": "NB:  employee !=position",
-									"wordWrap": true
-								},
-								{
 									"_type": "UMLClassView",
 									"_id": "AAAAAAFYqH/b7/XXJWs=",
 									"_parent": {
