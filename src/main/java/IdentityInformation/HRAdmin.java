@@ -56,6 +56,8 @@ public class HRAdmin extends Employee {
      */
     public void assignPosition(Position pos, Employee employee) {
         // TODO implement here
+        employee.setPosition(pos);
+        employee.addAction(new Action("Assigned a new position", new GregorianCalendar().getTime(), ActionType.PROMOTED));
     }
 
     /**

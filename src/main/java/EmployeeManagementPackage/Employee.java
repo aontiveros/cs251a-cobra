@@ -12,8 +12,8 @@ import java.util.*;
 public class Employee extends Guest {
 
     public Employee(String SSN, Date hireDate, Person mActor, Set<Person> mDependents, Position mPosition, Set<Action> mActions, Set<Evaluation> mEvaluations, Status mStatus, Manager mSupervisor) {
-        this.SSN = SSN;
-        this.hireDate = hireDate;
+        this.mSSN = SSN;
+        this.mHireDate = hireDate;
         this.mActor = mActor;
         this.mDependents = mDependents;
         this.mPosition = mPosition;
@@ -38,12 +38,12 @@ public class Employee extends Guest {
     /**
      * 
      */
-    private String SSN;
+    private String mSSN;
 
     /**
      * 
      */
-    private Date hireDate;
+    private Date mHireDate;
 
     /**
      * 
@@ -80,48 +80,64 @@ public class Employee extends Guest {
      */
     private Manager mSupervisor;
 
+    public void addAction(Action newAction){
+        mActions.add(newAction);
+    }
+
+    public void addDependent(Person dependent){
+        mDependents.add(dependent);
+    }
+
+    public void addEvaluations(Evaluation  newEvaluation){
+        mEvaluations.add(newEvaluation);
+    }
+
+    public void setPosition(Position newPosition){
+        mPosition = newPosition;
+    }
+
 
     public String getSSN() {
-        return SSN;
+        return mSSN;
     }
 
     public Date getHireDate() {
-        return hireDate;
+        return mHireDate;
     }
 
-    public Person getmActor() {
+    public Person getActor() {
         return mActor;
     }
 
-    public Set<Person> getmDependents() {
+    public Set<Person> getDependents() {
         return mDependents;
     }
 
-    public Position getmPosition() {
+    public Position getPosition() {
         return mPosition;
     }
 
-    public Set<Action> getmActions() {
+    public Set<Action> getActions() {
         return mActions;
     }
 
-    public Set<Evaluation> getmEvaluations() {
+    public Set<Evaluation> getEvaluations() {
         return mEvaluations;
     }
 
-    public Status getmStatus() {
+    public Status getStatus() {
         return mStatus;
     }
 
-    public Manager getmSupervisor() {
+    public Manager getSupervisor() {
         return mSupervisor;
     }
 
     @Override
     public String toString() {
         return "Employee{" +
-                "SSN='" + SSN + '\'' +
-                ", hireDate=" + hireDate +
+                "mSSN='" + mSSN + '\'' +
+                ", mHireDate=" + mHireDate +
                 ", mActor=" + mActor +
                 ", mDependents=" + mDependents +
                 ", mPosition=" + mPosition +
@@ -140,8 +156,8 @@ public class Employee extends Guest {
 
         Employee employee = (Employee) o;
 
-        if (SSN != null ? !SSN.equals(employee.SSN) : employee.SSN != null) return false;
-        if (hireDate != null ? !hireDate.equals(employee.hireDate) : employee.hireDate != null) return false;
+        if (mSSN != null ? !mSSN.equals(employee.mSSN) : employee.mSSN != null) return false;
+        if (mHireDate != null ? !mHireDate.equals(employee.mHireDate) : employee.mHireDate != null) return false;
         if (mActor != null ? !mActor.equals(employee.mActor) : employee.mActor != null) return false;
         if (mDependents != null ? !mDependents.equals(employee.mDependents) : employee.mDependents != null)
             return false;
@@ -155,8 +171,8 @@ public class Employee extends Guest {
 
     @Override
     public int hashCode() {
-        int result = SSN != null ? SSN.hashCode() : 0;
-        result = 31 * result + (hireDate != null ? hireDate.hashCode() : 0);
+        int result = mSSN != null ? mSSN.hashCode() : 0;
+        result = 31 * result + (mHireDate != null ? mHireDate.hashCode() : 0);
         result = 31 * result + (mActor != null ? mActor.hashCode() : 0);
         result = 31 * result + (mDependents != null ? mDependents.hashCode() : 0);
         result = 31 * result + (mPosition != null ? mPosition.hashCode() : 0);

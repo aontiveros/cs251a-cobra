@@ -25,6 +25,8 @@ public class Guest {
      */
     public void logIn() {
         // TODO implement here
+        System.out.println("You have logged in!");
+
     }
 
     /**
@@ -32,6 +34,7 @@ public class Guest {
      */
     public void logOut() {
         // TODO implement here
+        System.out.println("You have logged out");
     }
 
     /**

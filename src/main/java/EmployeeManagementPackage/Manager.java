@@ -62,6 +62,7 @@ public class Manager extends Employee {
      */
     public void witeEvaluation(Employee employee, Date being, Date end, String content, Grade grade) {
         // TODO implement here
+        employee.addEvaluations(new Evaluation(content, being, end, employee.getPosition().getSoc(), grade));
     }
 
     /**
@@ -69,7 +70,7 @@ public class Manager extends Employee {
      * @param action
      */
     public void performAction(Employee employee, Action action) {
-        // TODO implement here
+        employee.addAction(action);
     }
 
 }

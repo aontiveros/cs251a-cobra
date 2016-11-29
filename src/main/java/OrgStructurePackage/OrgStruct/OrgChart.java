@@ -7,14 +7,26 @@ import java.util.*;
  */
 public class OrgChart {
 
-    public OrgChart(Set<OrgUnit> units) {
-        mUnits = units;
+    private static OrgChart sOrgChart;
+
+    private OrgChart() {
+        mUnits = new HashSet<>();
     }
 
     private Set<OrgUnit> mUnits;
 
     public Set<OrgUnit> getUnits() {
         return mUnits;
+    }
+    public void addUnit(OrgUnit unit){
+        mUnits.add(unit);
+    }
+
+
+    public static synchronized OrgChart getOrgChart(){
+        if(sOrgChart == null)
+            sOrgChart = new OrgChart();
+        return sOrgChart;
     }
 
     @Override
