@@ -121,7 +121,6 @@ public class HRAdmin extends Employee {
         String posTitle  = in.nextLine();
         Position newPosition = new Position(posTitle);
         System.out.println("Position Created");
-        in.close();
     }
 
     /**
@@ -134,7 +133,6 @@ public class HRAdmin extends Employee {
         String posTitle  = in.nextLine();
         pos.setTitle(posTitle);
         System.out.println("Position Created");
-        in.close();
     }
 
 }

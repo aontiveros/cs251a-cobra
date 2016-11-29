@@ -17,6 +17,12 @@ public class OrgUnit {
         mSubsidiaries = new HashSet<>();
     }
 
+    public OrgUnit(int deptNumber, OrgUnitHead unitHead) {
+        mDeptNumber = deptNumber;
+        mUnitHead = unitHead;
+        mSubsidiaries = new HashSet<>();
+    }
+
     public OrgUnit(int deptNumber) {
         mDeptNumber = deptNumber;
     }
@@ -27,6 +33,9 @@ public class OrgUnit {
     private OrgUnitHead mUnitHead;
     private Set<OrgUnit> mSubsidiaries;
 
+    public void addPosition(Position pos){
+        mPositions.add(pos);
+    }
     public int getDeptNumber() {
         return mDeptNumber;
     }
