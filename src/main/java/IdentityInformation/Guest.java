@@ -8,11 +8,9 @@ import EmployeeManagementPackage.*;
  */
 public class Guest {
 
-    /**
-     * Default constructor
-     */
     public Guest() {
     }
+
 
     /**
      * @return

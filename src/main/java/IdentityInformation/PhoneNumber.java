@@ -7,10 +7,10 @@ import java.util.*;
  */
 public class PhoneNumber {
 
-    /**
-     * Default constructor
-     */
-    public PhoneNumber() {
+    public PhoneNumber(String areaCode, String countryCode, String extension) {
+        this.areaCode = areaCode;
+        this.countryCode = countryCode;
+        this.extension = extension;
     }
 
     /**

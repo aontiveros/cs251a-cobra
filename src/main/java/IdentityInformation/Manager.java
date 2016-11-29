@@ -1,7 +1,8 @@
 package IdentityInformation;
 
 import java.util.*;
-import EmployeeManagementPackage.Employee;
+
+import EmployeeManagementPackage.*;
 import OrgStructurePackage.OrgStruct.OrgUnit;
 
 
@@ -10,10 +11,8 @@ import OrgStructurePackage.OrgStruct.OrgUnit;
  */
 public class Manager extends Employee {
 
-    /**
-     * Default constructor
-     */
-    public Manager() {
+    public Manager(String SSN, Date hireDate, Person mActor, Set<Person> mDependents, Position mPosition, Set<Action> mActions, Set<Evaluation> mEvaluations, Status mStatus, EmployeeManagementPackage.Manager mSupervisor) {
+        super(SSN, hireDate, mActor, mDependents, mPosition, mActions, mEvaluations, mStatus, mSupervisor);
     }
 
     /**

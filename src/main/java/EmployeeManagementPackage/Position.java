@@ -11,10 +11,15 @@ import java.util.*;
  */
 public class Position {
 
-    /**
-     * Default constructor
-     */
-    public Position() {
+    public Position(String title, String soc, PayScale mSalary, OrgUnit mOrgUnit, Set<Benefit> mBenefits, Specification mSpecification, Set<Shift> mShift, Set<Shift> mShifts) {
+        this.title = title;
+        this.soc = soc;
+        this.mSalary = mSalary;
+        this.mOrgUnit = mOrgUnit;
+        this.mBenefits = mBenefits;
+        this.mSpecification = mSpecification;
+        this.mShift = mShift;
+        this.mShifts = mShifts;
     }
 
     /**

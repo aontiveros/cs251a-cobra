@@ -7,10 +7,8 @@ import java.util.*;
  */
 public class Ethnicity {
 
-    /**
-     * Default constructor
-     */
-    public Ethnicity() {
+    public Ethnicity(EthnicityType mEthnicType) {
+        this.mEthnicType = mEthnicType;
     }
 
     /**
@@ -18,4 +16,7 @@ public class Ethnicity {
      */
     private EthnicityType mEthnicType;
 
+    public EthnicityType getmEthnicType() {
+        return mEthnicType;
+    }
 }

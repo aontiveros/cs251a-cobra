@@ -7,10 +7,10 @@ import java.util.*;
  */
 public class Action {
 
-    /**
-     * Default constructor
-     */
-    public Action() {
+    public Action(String note, Date date, ActionType mActionType) {
+        this.note = note;
+        this.date = date;
+        this.mActionType = mActionType;
     }
 
     /**

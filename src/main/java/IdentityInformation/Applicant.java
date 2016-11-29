@@ -7,11 +7,11 @@ import java.util.*;
  */
 public class Applicant extends Guest {
 
-    /**
-     * Default constructor
-     */
     public Applicant() {
+
     }
+
+
 
     /**
      * @param app

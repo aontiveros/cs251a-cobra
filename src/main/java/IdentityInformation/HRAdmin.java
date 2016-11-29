@@ -2,6 +2,7 @@ package IdentityInformation;
 
 import java.util.*;
 import EmployeeManagementPackage.*;
+import EmployeeManagementPackage.Manager;
 import OrgStructurePackage.OrgStruct.*;
 import PayrollPackage.Payroll.*;
 
@@ -10,12 +11,14 @@ import PayrollPackage.Payroll.*;
  */
 public class HRAdmin extends Employee {
 
-    /**
-     * Default constructor
-     */
-    public HRAdmin() {
+    public HRAdmin(String SSN, Date hireDate, Person mActor, Set<Person> mDependents, Position mPosition, Set<Action> mActions, Set<Evaluation> mEvaluations, Status mStatus, Manager mSupervisor) {
+        super(SSN, hireDate, mActor, mDependents, mPosition, mActions, mEvaluations, mStatus, mSupervisor);
     }
 
+    @Override
+    public String toString(){
+        return super.toString();
+    }
     /**
      * 
      */
