@@ -87,11 +87,18 @@ public class HRAdmin extends Employee {
         // TODO implement here
     }
 
-    /**
-     * @param payment
-     */
-    public void issuePayment(Payment payment) {
+    public void issueBulkPayment() {
         // TODO implement here
+        System.out.println("Issuing bulk payment");
+        BulkPayment bulkPayment = new BulkPayment();
+        bulkPayment.sendPayment();
+    }
+
+    public void issueIndividualPayment(double amount, Set<Employee> listOfEmployees, PaymentTypes payType) {
+        // TODO implement here
+        System.out.println("Issuing individual payment");
+        IndividualPayment individualPayment = new IndividualPayment(amount, listOfEmployees, payType);
+        individualPayment.sendPayment();
     }
 
     /**

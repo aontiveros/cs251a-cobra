@@ -28,6 +28,13 @@ public class IndividualPayment extends Payment {
         mType = type;
     }
 
+    public void sendPayment() {
+        System.out.println("Sending individual payment of amount ");
+        System.out.println(super.getAmount());
+        System.out.println("To these top employees ");
+        System.out.println(getListOfEmployeesPaid());
+    }
+
     public Set<Employee> getListOfEmployeesPaid() {
         return super.getPayrollList();
     }

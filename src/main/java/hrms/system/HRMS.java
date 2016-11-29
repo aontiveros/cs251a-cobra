@@ -1,10 +1,12 @@
 package hrms.system;
 
+import EmployeeManagementPackage.Employee;
 import EmployeeManagementPackage.Manager;
 import EmployeeManagementPackage.Position;
 import IdentityInformation.HRAdmin;
 import IdentityInformation.Person;
 import OrgStructurePackage.OrgStruct.Supervisor;
+import PayrollPackage.Payroll.PaymentTypes;
 import org.apache.log4j.Logger;
 import org.apache.log4j.spi.LoggerFactory;
 
@@ -34,6 +36,13 @@ public class HRMS {
         // Here's our HR specialist!
         System.out.println("Here is our HR Specialist");
         System.out.println(HRSpecialist);
+
+        // Payroll Test
+        HRSpecialist.issueBulkPayment();
+        Set<Employee> payBonusToThesePeople = new HashSet<>();
+        payBonusToThesePeople.add(new Employee("1243"));
+        payBonusToThesePeople.add(new Employee("7231"));
+        HRSpecialist.issueIndividualPayment(3000, payBonusToThesePeople, PaymentTypes.BONUS);
 
 
 

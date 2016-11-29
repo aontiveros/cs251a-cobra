@@ -12,7 +12,9 @@ public class BulkPayment extends Payment {
     /**
      * Default constructor
      */
+    private double paymentToAllEmployeesAmount = 100000000;
     public BulkPayment() {
+        super.setAmount(paymentToAllEmployeesAmount);
     }
 
     public BulkPayment(double amount, Set<Employee> payrollList) {
@@ -21,6 +23,11 @@ public class BulkPayment extends Payment {
 
     public BulkPayment(double amount) {
         super(amount);
+    }
+
+    public void sendPayment() {
+        System.out.println("Sending bulk payment of amount ");
+        System.out.println(super.getAmount());
     }
 
     @Override
