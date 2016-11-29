@@ -69,6 +69,7 @@ public class HRAdmin extends Employee {
      */
     public void unAssignPosition(Employee employee) {
         // TODO implement here
+
     }
 
     /**
@@ -98,6 +99,10 @@ public class HRAdmin extends Employee {
      */
     public void changeUnitHierachy(OrgUnit mOrgUnit1, OrgUnit mOrgUnit2) {
         // TODO implement here
+        OrgUnitHead newHead = new OrgUnitHead(UnitHeadType.CHAIR);
+        mOrgUnit1.setUnitHead(newHead);
+
+        OrgChart.getOrgChart().addUnit(newHead);
     }
 
     /**
@@ -105,6 +110,12 @@ public class HRAdmin extends Employee {
      */
     public void createPosition() {
         // TODO implement here
+        Scanner in = new Scanner(System.in);
+        System.out.println("What is the title of the positon?");
+        String posTitle  = in.nextLine();
+        Position newPosition = new Position(posTitle);
+        System.out.println("Position Created");
+        in.close();
     }
 
     /**
@@ -112,6 +123,12 @@ public class HRAdmin extends Employee {
      */
     public void updatePosition(Position pos) {
         // TODO implement here
+        Scanner in = new Scanner(System.in);
+        System.out.println("What is the new title of the positon?");
+        String posTitle  = in.nextLine();
+        pos.setTitle(posTitle);
+        System.out.println("Position Created");
+        in.close();
     }
 
 }

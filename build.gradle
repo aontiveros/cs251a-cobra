@@ -8,9 +8,6 @@ repositories{
 }
 
 dependencies{
-    //main source set dependencies
-    compile 'log4j:log4j:1.2.17'
-
     //test source set dependencies
     testCompile 'junit:junit:4.12'
 }

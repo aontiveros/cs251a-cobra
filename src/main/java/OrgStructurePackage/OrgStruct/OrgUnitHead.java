@@ -1,13 +1,16 @@
 package OrgStructurePackage.OrgStruct;
 
+import EmployeeManagementPackage.Position;
+
 import java.util.*;
 
 /**
  * @author Cobra
  */
-public class OrgUnitHead {
+public class OrgUnitHead extends  OrgUnit{
 
-    public OrgUnitHead(UnitHeadType headType) {
+    public OrgUnitHead(int deptNumber, Set<Position> positions, Account fund, OrgUnitHead unitHead, UnitHeadType headType) {
+        super(deptNumber, positions, fund, unitHead);
         mHeadType = headType;
     }
 

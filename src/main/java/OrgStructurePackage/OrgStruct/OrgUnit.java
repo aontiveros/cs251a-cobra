@@ -14,12 +14,14 @@ public class OrgUnit {
         mPositions = positions;
         mFund = fund;
         mUnitHead = unitHead;
+        mSubsidiaries = new HashSet<>();
     }
 
     private int mDeptNumber;
     private Set<Position> mPositions;
     private Account mFund;
     private OrgUnitHead mUnitHead;
+    private Set<OrgUnit> mSubsidiaries;
 
     public int getDeptNumber() {
         return mDeptNumber;
@@ -35,6 +37,15 @@ public class OrgUnit {
 
     public OrgUnitHead getUnitHead() {
         return mUnitHead;
+    }
+
+    public void addSubsidiary(OrgUnit unit){
+        mSubsidiaries.add(unit);
+    }
+
+
+    public void setUnitHead(OrgUnitHead unitHead) {
+        mUnitHead = unitHead;
     }
 
     @Override

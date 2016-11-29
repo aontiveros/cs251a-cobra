@@ -101,4 +101,8 @@ public class Position {
     public Set<Shift> getShifts() {
         return mShifts;
     }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }
