@@ -1,6 +1,3 @@
-package IdentityInformation;
-
-import EmployeeManagementPackage.Actor;
 
 import java.util.*;
 
@@ -49,5 +46,10 @@ public class Person implements Actor {
      * 
      */
     private Set<Disability> mDisabilities;
+
+    /**
+     * 
+     */
+    private Email mEmail;
 
 }

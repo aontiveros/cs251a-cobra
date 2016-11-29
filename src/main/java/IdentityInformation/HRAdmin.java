@@ -1,9 +1,3 @@
-package IdentityInformation;
-
-import EmployeeManagementPackage.Employee;
-import EmployeeManagementPackage.Position;
-import OrgStructurePackage.OrgStruct.OrgChart;
-import OrgStructurePackage.OrgStruct.OrgUnitHead;
 
 import java.util.*;
 

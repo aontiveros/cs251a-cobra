@@ -1,11 +1,10 @@
-package IdentityInformation;
 
 /**
  * 
  */
 public enum DisabilityType {
-    PHYSICAL_DISABILITY,
-    VISUALLY_IMPAIRED,
+    PHYSICAL DISABILITY,
+    VISUALLY IMPAIRED,
     DEAF,
     MUTE,
     DIABETIC,
