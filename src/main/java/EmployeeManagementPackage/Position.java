@@ -11,6 +11,10 @@ import java.util.*;
  */
 public class Position {
 
+    public Position() {
+        //default constructor
+    }
+
     public Position(String title, String soc, PayScale mSalary, OrgUnit mOrgUnit, Set<Benefit> mBenefits, Specification mSpecification, Set<Shift> mShift, Set<Shift> mShifts) {
         this.title = title;
         this.soc = soc;
