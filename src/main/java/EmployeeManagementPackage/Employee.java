@@ -24,8 +24,8 @@ public class Employee extends Guest {
     }
 
     public Employee(String SSN, Date hireDate, Person actor, Set<Person> dependents, Position position, Status status, Manager supervisor) {
-        this.SSN = SSN;
-        this.hireDate = hireDate;
+        mSSN = SSN;
+        mHireDate = hireDate;
         mActor = actor;
         mDependents = dependents;
         mPosition = position;

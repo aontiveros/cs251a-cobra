@@ -20,6 +20,7 @@ public class HRMS {
     public static void main(String[] args){
         System.out.println("Hello world");
 
+        // Declaring attributes for HR Admin
         Person Bob = new Person("Bob");
         Set<Person> dependentsOFBob = new HashSet<>();
         dependentsOFBob.add(new Person("Clara"));
