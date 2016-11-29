@@ -25,6 +25,8 @@ public class OrgUnit {
 
     public OrgUnit(int deptNumber) {
         mDeptNumber = deptNumber;
+        mPositions = new HashSet<>();
+        mSubsidiaries = new HashSet<>();
     }
 
     private int mDeptNumber;

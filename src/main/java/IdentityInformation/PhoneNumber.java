@@ -5,16 +5,19 @@ package IdentityInformation;
  */
 public class PhoneNumber {
 
-    public PhoneNumber(String areaCode, String countryCode, String extension) {
+    public PhoneNumber(String areaCode, String countryCode, String extension, String Number) {
         this.mAreaCode = areaCode;
         this.mCountryCode = countryCode;
         this.mExtension = extension;
+        mNumber = Number;
     }
 
     /**
      * 
      */
     private String mAreaCode;
+
+    private String mNumber;
 
     /**
      * 

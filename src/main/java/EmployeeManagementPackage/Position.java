@@ -26,6 +26,12 @@ public class Position {
         this.mShifts = mShifts;
     }
 
+    public Position(String title, String soc,OrgUnit mOrgUnit) {
+        this.title = title;
+        this.soc = soc;
+        this.mOrgUnit = mOrgUnit;
+    }
+
     public Position(String title) {
         this.title = title;
     }

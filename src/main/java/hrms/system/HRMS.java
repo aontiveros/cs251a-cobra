@@ -3,9 +3,7 @@ package hrms.system;
 import EmployeeManagementPackage.Employee;
 import EmployeeManagementPackage.Manager;
 import EmployeeManagementPackage.Position;
-import IdentityInformation.Address;
-import IdentityInformation.HRAdmin;
-import IdentityInformation.Person;
+import IdentityInformation.*;
 import OrgStructurePackage.OrgStruct.Supervisor;
 import PayrollPackage.Payroll.PaymentTypes;
 import OrgStructurePackage.OrgStruct.OrgChart;
@@ -30,7 +28,7 @@ public class HRMS {
     private static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args){
-        System.out.println("Hello world");
+
 
         // Declaring attributes for HR Admin
         Person Bob = new Person("Bob");
@@ -60,6 +58,7 @@ public class HRMS {
     public static void repl(){
         String command = "";
         do{
+            printMenu();
             try{
             command = in.nextLine().toLowerCase();
                 switch (command) {
@@ -70,18 +69,48 @@ public class HRMS {
                         addEmployee();
                         break;
                     case "3":
-                        viewPositions();
+                        viewOrganizationalUnits();
                         break;
                     case "4":
-                        System.out.println("To be added");
+                        viewPositions();
+                        break;
+                    case "5":
+                        addPositions();
+                        break;
                     default:
                 }
             }catch(Exception ex){
+                ex.printStackTrace();
                 System.out.println("Invalid command, try again:");
             }
-            printMenu();
+
         }while(!command.toLowerCase().equals("6"));
         in.close();
+    }
+
+    public static void addPositions(){
+        String title, org, code;
+        OrgUnit uniter;
+        System.out.println("What is the position title?");
+        title = in.nextLine();
+        System.out.println("What is the org unit it is associated with?");
+        for(String unit : organizationalUnits.keySet()){
+            System.out.print(unit + " ");
+        }
+        System.out.println();
+        org = in.nextLine();
+        System.out.println("What is the SOC code?");
+        code = in.nextLine();
+        if(organizationalUnits.containsKey(org)){
+            uniter = organizationalUnits.get(org);
+            Position pos = new Position(title, code, organizationalUnits.get(org));
+            organizationalUnits.get(org).addPosition(pos);
+            sPositions.put(pos.getTitle(), pos);
+        }
+        else{
+            System.out.println("Please try again....");
+        }
+
     }
 
     public static void printMenu(){
@@ -99,12 +128,13 @@ public class HRMS {
         for(String org : organizationalUnits.keySet()){
             System.out.println("Org unit: " + org + " ");
             System.out.print("\tPositions: ");
-            if(organizationalUnits.get(org).getPositions().isEmpty()){
+            if(organizationalUnits.get(org).getPositions() == null || organizationalUnits.get(org).getPositions().isEmpty()){
                 System.out.print("No Positions for Unit");
             }
             else {
                 for (Position pos : organizationalUnits.get(org).getPositions()) {
-                    System.out.print(pos.getTitle() + " ");
+                    if(pos != null)
+                        System.out.print(pos.getTitle() + " ");
                 }
             }
             System.out.println();
@@ -119,7 +149,7 @@ public class HRMS {
     }
 
     public static void addEmployee(){
-        String orgUnit, position, name;
+        String orgUnit, position, name, social;
         Employee employee;
         if(OrgChart.getOrgChart().getUnits().isEmpty()){
             System.out.println("Please create an organization before attempting to add an employee");
@@ -131,15 +161,27 @@ public class HRMS {
             }
             System.out.println();
             orgUnit = in.nextLine();
-            if(organizationalUnits.get(orgUnit) != null && organizationalUnits.get(orgUnit).getPositions().isEmpty()){
+            if(organizationalUnits.get(orgUnit) != null && !organizationalUnits.get(orgUnit).getPositions().isEmpty()){
                 System.out.println("Please select a position:");
                 for(Position pos : organizationalUnits.get(orgUnit).getPositions()){
                     System.out.print(pos.getTitle() + " '");
                 }
                 System.out.println();
                 position = in.nextLine();
-
-               // employee = new Employee();
+                System.out.println("Please describe the employee:");
+                Person person = getPerson();
+                Set<Person> dependents = new HashSet<>();
+                System.out.println("How many dependents?");
+                int count = in.nextInt();
+                while(count > 0){
+                    System.out.println("Dependent: " + count);
+                    dependents.add(getPerson());
+                    count--;
+                }
+                System.out.println("What is their social?");
+                social = in.nextLine();
+                employee = new Employee(social, new GregorianCalendar().getTime(), person, dependents, sPositions.get(position));
+                sEmployees.add(employee);
             }
 
         }
@@ -159,8 +201,103 @@ public class HRMS {
         System.out.println("Please enter a state:");
         state = in.nextLine();
 
-        //Address address = new Address(Integer.parseInt(number, ));
-        return null;
+        Address address = new Address(Integer.parseInt(number), street, city, state, Integer.parseInt(zip));
+        return address;
+    }
+
+    public static Person getPerson(){
+        String name;
+        Gender gender;
+        Set<Disability> disability = new HashSet<>();
+        Ethnicity eth;
+        Address addres;
+        Email email;
+        PhoneNumber home, cell, work;
+        Person newPerson = null;
+        System.out.println("What is the person's name?");
+        name = in.nextLine();
+        home = getPhone("home");
+        cell = getPhone("cell");
+        work = getPhone("work");
+        System.out.println("What is their address?");
+        addres = getAddress();
+        email = getEmail();
+        eth = getEthnicity();
+        disability = getDisability();
+        gender = getGender();
+        return new Person(name, new GregorianCalendar().getTime(), gender, addres, work, home, cell, eth, disability, email);
+
+    }
+
+    public static Gender getGender(){
+        String gender;
+        System.out.print("What is their Gender ? ( ");
+        for(Gender type : Gender.values()){
+            System.out.print(" " + type + " ");
+        }
+        System.out.println(")");
+        gender = in.nextLine();
+        for(Gender type : Gender.values()){
+            if(gender.toLowerCase().equals(type.toString().toLowerCase())){
+                return type;
+            }
+        }
+        return Gender.DECLINETOSTATE;
+    }
+
+    public static Set<Disability> getDisability(){
+        String dis;
+        Set<Disability> disabilities = new HashSet<>();
+        System.out.print("What is their disability ? ( q for finished, NONE ");
+        for(DisabilityType type : DisabilityType.values()){
+            System.out.print(" " + type + " ");
+        }
+        System.out.println(")");
+        dis = in.nextLine();
+        if(dis.equals("q"))
+            return disabilities;
+        for(DisabilityType type : DisabilityType.values()){
+            if(dis.toLowerCase().equals(type.toString().toLowerCase())){
+                disabilities.add(new Disability(type));
+            }
+        }
+        return disabilities;
+    }
+
+    public static Ethnicity getEthnicity(){
+        String eth;
+        System.out.print("What is their ethnicity? (");
+        for(EthnicityType type : EthnicityType.values()){
+            System.out.print(" " + type + " ");
+        }
+        System.out.println(")");
+        eth = in.nextLine();
+        for(EthnicityType type : EthnicityType.values()){
+            if(type.toString().toLowerCase().equals(eth.toLowerCase()))
+                return new Ethnicity(type);
+        }
+        return new Ethnicity(EthnicityType.OTHER);
+    }
+
+    public static Email getEmail(){
+        String username, domain, mailserver;
+        System.out.println("What is the username?");
+        username = in.nextLine();
+        return  new Email(username);
+    }
+
+    public static PhoneNumber getPhone(String type){
+
+        String area, country, number, extension;
+        System.out.println("What is the " + type + " phone area code? XXX");
+        area = in.nextLine();
+        System.out.println("What is the " + type + " phone number? (XXX-XXXX)");
+        number = in.nextLine();
+        System.out.println("What is the country code? ");
+        country = in.nextLine();
+        System.out.println("What is the extension? (0 for none)");
+        extension = in.nextLine();
+        return new PhoneNumber(area, country, extension, number);
     }
 
     public static void addOrganizationalUnit(){
@@ -174,6 +311,7 @@ public class HRMS {
 
         OrgChart orgChart = OrgChart.getOrgChart();
         orgChart.addUnit(newOrgUnit);
+        organizationalUnits.put(name, newOrgUnit);
         System.out.println("Would you like to add a position to the unit (true/false)?");
         hasPositions = in.nextLine();
         if(Boolean.parseBoolean(hasPositions)){

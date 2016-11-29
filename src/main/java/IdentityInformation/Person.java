@@ -9,7 +9,7 @@ import java.util.*;
  */
 public class Person implements Actor {
 
-    public Person(String name, Date dob, Gender mGender, Address mAddress, PhoneNumber[] mWorkNumber, PhoneNumber[] mHomeNumber, PhoneNumber[] mCellNumber, Ethnicity mEthnicity, Set<Disability> mDisabilities, Email mEmail) {
+    public Person(String name, Date dob, Gender mGender, Address mAddress, PhoneNumber mWorkNumber, PhoneNumber mHomeNumber, PhoneNumber mCellNumber, Ethnicity mEthnicity, Set<Disability> mDisabilities, Email mEmail) {
         this.name = name;
         this.dob = dob;
         this.mGender = mGender;
@@ -49,7 +49,7 @@ public class Person implements Actor {
     /**
      * 
      */
-    private PhoneNumber[] mWorkNumber,mHomeNumber,mCellNumber;
+    private PhoneNumber mWorkNumber,mHomeNumber,mCellNumber;
 
     /**
      * 
