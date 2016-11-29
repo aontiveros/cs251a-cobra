@@ -7,30 +7,41 @@ import java.util.*;
  */
 public class Email {
 
-    /**
-     * Default constructor
-     */
-    public Email() {
+    public Email(String userName) {
+        mUserName = userName;
     }
 
-    /**
-     * 
-     */
-    private String userName;
+    private String mUserName;
 
     /**
      * 
      */
-    private String symbol = "@";
+    private static String mOrgDomain = "Company";
 
-    /**
-     * 
-     */
-    private String mailServer;
+    public String getUserName() {
+        return mUserName;
+    }
 
-    /**
-     * 
-     */
-    private String orgDomain;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
+        Email email = (Email) o;
+
+        return mUserName.equals(email.mUserName);
+
+    }
+
+    @Override
+    public int hashCode() {
+        return mUserName.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "Email{" +
+                mUserName + '@' + mOrgDomain + ".com" + "\'" +
+                '}';
+    }
 }

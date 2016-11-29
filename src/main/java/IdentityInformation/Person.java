@@ -2,7 +2,6 @@ package IdentityInformation;
 
 import EmployeeManagementPackage.Actor;
 import java.util.*;
-import IdentityInformation.*;
 
 
 /**
@@ -34,7 +33,7 @@ public class Person implements Actor {
     /**
      * 
      */
-    private Adress mAddress;
+    private Address mAddress;
 
     /**
      * 
