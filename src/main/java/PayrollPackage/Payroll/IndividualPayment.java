@@ -28,6 +28,14 @@ public class IndividualPayment extends Payment {
         mType = type;
     }
 
+    public Set<Employee> getListOfEmployeesPaid() {
+        return super.getPayrollList();
+    }
+
+    public double getPaymentAmount() {
+        return super.getAmount();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -50,7 +58,7 @@ public class IndividualPayment extends Payment {
     @Override
     public String toString() {
         return "IndividualPayment{" +
-                "mType=" + mType +
+                "mType=" + mType + " of amount " + getPaymentAmount() + " to " + getListOfEmployeesPaid() +
                 '}';
     }
 }

@@ -30,6 +30,8 @@ public class HRMS {
         HRAdmin HRSpecialist = new HRAdmin("12345", new Date(1220227200L*1000),
                 Bob, dependentsOFBob, HRPos, bossOfBob);
 
+
+        // Here's our HR specialist!
         System.out.println("Here is our HR Specialist");
         System.out.println(HRSpecialist);
 

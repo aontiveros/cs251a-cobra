@@ -20,6 +20,10 @@ public abstract class Payment {
         mPayrollList = payrollList;
     }
 
+    public Payment(double amount) {
+        mAmount = amount;
+    }
+
     protected double mAmount;
 
     protected Set<Employee> mPayrollList;
