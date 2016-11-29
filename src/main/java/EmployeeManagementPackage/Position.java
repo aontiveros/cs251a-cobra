@@ -66,4 +66,35 @@ public class Position {
      */
     private Set<Shift> mShifts;
 
+    public String getTitle() {
+        return title;
+    }
+
+    public String getSoc() {
+        return soc;
+    }
+
+    public PayScale getSalary() {
+        return mSalary;
+    }
+
+    public OrgUnit getOrgUnit() {
+        return mOrgUnit;
+    }
+
+    public Set<Benefit> getBenefits() {
+        return mBenefits;
+    }
+
+    public Specification getSpecification() {
+        return mSpecification;
+    }
+
+    public Set<Shift> getShift() {
+        return mShift;
+    }
+
+    public Set<Shift> getShifts() {
+        return mShifts;
+    }
 }
