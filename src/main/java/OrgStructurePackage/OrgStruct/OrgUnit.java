@@ -17,6 +17,10 @@ public class OrgUnit {
         mSubsidiaries = new HashSet<>();
     }
 
+    public OrgUnit(int deptNumber) {
+        mDeptNumber = deptNumber;
+    }
+
     private int mDeptNumber;
     private Set<Position> mPositions;
     private Account mFund;

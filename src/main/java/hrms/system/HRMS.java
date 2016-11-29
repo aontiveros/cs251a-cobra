@@ -30,7 +30,14 @@ public class HRMS {
         HRAdmin HRSpecialist = new HRAdmin("12345", new Date(1220227200L*1000),
                 Bob, dependentsOFBob, HRPos, bossOfBob);
 
+        System.out.println("Here is our HR Specialist");
         System.out.println(HRSpecialist);
+
+
+
+
+
+        // Apache testing stuff.  WIP.
 //        logger.info("Hello there");
 //        logger.info("The application is working!");
     }

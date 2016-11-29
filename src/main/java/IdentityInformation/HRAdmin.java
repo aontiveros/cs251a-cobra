@@ -102,7 +102,7 @@ public class HRAdmin extends Employee {
         OrgUnitHead newHead = new OrgUnitHead(UnitHeadType.CHAIR);
         mOrgUnit1.setUnitHead(newHead);
 
-        OrgChart.getOrgChart().addUnit(newHead);
+        OrgChart.getOrgChart().addUnit(mOrgUnit1);
     }
 
     /**
