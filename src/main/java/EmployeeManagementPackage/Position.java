@@ -26,6 +26,10 @@ public class Position {
         this.mShifts = mShifts;
     }
 
+    public Position(String title) {
+        this.title = title;
+    }
+
     /**
      * 
      */

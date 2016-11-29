@@ -1,5 +1,6 @@
 package OrgStructurePackage.OrgStruct;
 
+import EmployeeManagementPackage.Employee;
 import EmployeeManagementPackage.Position;
 
 import java.util.*;
@@ -9,7 +10,7 @@ import java.util.*;
  */
 public class Supervisor extends Position {
 
-    public Supervisor(Set<Position> directReports) {
+    public Supervisor(HashSet<Position> directReports) {
         mDirectReports = directReports;
     }
 
@@ -17,6 +18,10 @@ public class Supervisor extends Position {
 
     public Set<Position> getDirectReports() {
         return mDirectReports;
+    }
+
+    public void addDirectReport(Position pos) {
+        mDirectReports.add(pos);
     }
 
     @Override

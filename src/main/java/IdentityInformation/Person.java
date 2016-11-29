@@ -22,6 +22,10 @@ public class Person implements Actor {
         this.mEmail = mEmail;
     }
 
+    public Person(String name) {
+        this.name = name;
+    }
+
     /**
      * 
      */
