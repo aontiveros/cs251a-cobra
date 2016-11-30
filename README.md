@@ -74,9 +74,9 @@ To simply run the application from the command line, type the following command 
 terminal at the root of the repository:
 
 For Windows:
-```gradlew run```
+```gradlew run -q```
 
 
 For Linux/MacOS:
-```./gradlew run```
+```./gradlew run -q```
 

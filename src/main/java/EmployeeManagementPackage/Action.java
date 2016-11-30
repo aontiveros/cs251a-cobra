@@ -28,4 +28,15 @@ public class Action {
      */
     private ActionType mActionType;
 
+    public String getNote() {
+        return note;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public ActionType getmActionType() {
+        return mActionType;
+    }
 }

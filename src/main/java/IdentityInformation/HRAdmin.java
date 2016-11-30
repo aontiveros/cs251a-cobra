@@ -5,6 +5,7 @@ import EmployeeManagementPackage.*;
 import EmployeeManagementPackage.Manager;
 import OrgStructurePackage.OrgStruct.*;
 import PayrollPackage.Payroll.*;
+import hrms.system.HRMS;
 
 /**
  * @author Cobra
@@ -26,8 +27,24 @@ public class HRAdmin extends Employee {
     /**
      * 
      */
-    public void createActionOnRecord() {
-        // TODO implement here
+    public void createActionOnRecord() throws Exception {
+        System.out.print("What is the action type? ( ");
+        for(ActionType type : ActionType.values()){
+            System.out.print(" " + type + ",");
+        }
+        System.out.println(")");
+        String typer = HRMS.in.nextLine();
+        ActionType selected = null;
+        for(ActionType type : ActionType.values()){
+            if(type.toString().equals(typer))
+                selected = type;
+        }
+        if(selected == null)
+            throw new Exception("Must Select a valid type!");
+        System.out.println("What is the action notes? ");
+        String notes = HRMS.in.nextLine();
+        Action action = new Action(notes, new GregorianCalendar().getTime(), selected);
+        System.out.println("Created Action");
 
     }
 
@@ -35,8 +52,8 @@ public class HRAdmin extends Employee {
      * @return
      */
     public OrgChart createOrgChart() {
-        // TODO implement here
-        return null;
+        HRMS.addOrganizationalUnit();
+        return OrgChart.getOrgChart();
     }
 
     /**
@@ -44,8 +61,8 @@ public class HRAdmin extends Employee {
      * @return
      */
     public OrgChart updateOrgChart(OrgChart orgChart) {
-        // TODO implement here
-        return null;
+        HRMS.addOrganizationalUnit();
+        return OrgChart.getOrgChart();
     }
 
     /**
@@ -60,7 +77,6 @@ public class HRAdmin extends Employee {
      * @param employee
      */
     public void assignPosition(Position pos, Employee employee) {
-        // TODO implement here
         employee.setPosition(pos);
         employee.addAction(new Action("Assigned a new position", new GregorianCalendar().getTime(), ActionType.PROMOTED));
     }
@@ -69,33 +85,31 @@ public class HRAdmin extends Employee {
      * @param employee
      */
     public void unAssignPosition(Employee employee) {
-        // TODO implement here
-
+        HRMS.addPositions();
     }
 
     /**
      * 
      */
     public void createOrgUnit() {
-        // TODO implement here
+        HRMS.addOrganizationalUnit(); //placeholder
     }
 
     /**
      * 
      */
     public void dissolveOrgUnit() {
-        // TODO implement here
+        HRMS.addOrganizationalUnit(); //placeholder
     }
 
     public void issueBulkPayment() {
-        // TODO implement here
         System.out.println("Issuing bulk payment");
         BulkPayment bulkPayment = new BulkPayment();
         bulkPayment.sendPayment();
     }
 
     public void issueIndividualPayment(double amount, Set<Employee> listOfEmployees, PaymentTypes payType) {
-        // TODO implement here
+
         System.out.println("Issuing individual payment");
         IndividualPayment individualPayment = new IndividualPayment(amount, listOfEmployees, payType);
         individualPayment.sendPayment();

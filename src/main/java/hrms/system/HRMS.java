@@ -4,7 +4,6 @@ import EmployeeManagementPackage.Employee;
 import EmployeeManagementPackage.Manager;
 import EmployeeManagementPackage.Position;
 import IdentityInformation.*;
-import OrgStructurePackage.OrgStruct.Supervisor;
 import PayrollPackage.Payroll.PaymentTypes;
 import OrgStructurePackage.OrgStruct.OrgChart;
 import OrgStructurePackage.OrgStruct.OrgUnit;
@@ -19,13 +18,13 @@ import java.util.HashSet;
 public class HRMS {
 //    private static final Logger logger = Logger.getLogger(HRMS.class);
 
-    private static final Set<Employee> sEmployees = new HashSet<>();
-    private static final HashMap<String, Position> sPositions = new HashMap<>();
+    public static final Set<Employee> sEmployees = new HashSet<>();
+    public static final HashMap<String, Position> sPositions = new HashMap<>();
 
     private static final HashMap<String, OrgUnit> organizationalUnits = new HashMap<>();
     private static final HashMap<String, OrgUnitHead> organizationalUnitHeads = new HashMap<>();
 
-    private static Scanner in = new Scanner(System.in);
+    public static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args){
 
