@@ -25,7 +25,7 @@ Presentation on November 29, 2016
 * Abhi Koduri
 * Sam Ordonia
 
-### To open the project into an ide
+# To open the project into an ide
 
 To open the project into an IDE (Ecplise or Intellij), run the following command for your respective IDE
 
